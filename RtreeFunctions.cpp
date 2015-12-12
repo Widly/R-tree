@@ -228,7 +228,7 @@ Node* Rtree::_SearchObject(Node* curNode, MBR covering, int data) {
 Node* Rtree::_FindExtremumByArea(Node* curNode, int borderType) {
 	int i = 0;
 
-	if (curNode->type == LEAF && curExtremum == NULL) {
+	if (curNode->type == LEAF && curExtremum == NULL && curNode->objCount != 0) {
 		curExtremum = curNode->childs[0];
 		i++;
 	}

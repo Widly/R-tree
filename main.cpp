@@ -179,19 +179,27 @@ int main(int argc, char* argv[]) {
 
 		if (operation == "max") {
 			bufNode = myRtree.FindExtremumByArea(MAX);
+			if (bufNode == NULL) {
+				outFile << "no max, R-tree is empty" << endl << endl;
+				continue;
+			}
 			outFile << "max:" << " x1=" << bufNode->covering.x1
-					<< " x2=" << bufNode->covering.x2
-					<< " y1=" << bufNode->covering.y1
-					<< " y2=" << bufNode->covering.y2 << " data=" << bufNode->data << endl;
+				<< " x2=" << bufNode->covering.x2
+				<< " y1=" << bufNode->covering.y1
+				<< " y2=" << bufNode->covering.y2 << " data=" << bufNode->data << endl << endl;
 			continue;
 		}
 
 		if (operation == "min") {
+			if (bufNode == NULL) {
+				outFile << "no min, R-tree is empty" << endl << endl;
+				continue;
+			}
 			bufNode = myRtree.FindExtremumByArea(MIN);
 			outFile << "min:" << " x1=" << bufNode->covering.x1
-					<< " x2=" << bufNode->covering.x2
-					<< " y1=" << bufNode->covering.y1
-					<< " y2=" << bufNode->covering.y2 << " data=" << bufNode->data << endl;
+				<< " x2=" << bufNode->covering.x2
+				<< " y1=" << bufNode->covering.y1
+				<< " y2=" << bufNode->covering.y2 << " data=" << bufNode->data << endl << endl;
 			continue;
 		}
 	}
