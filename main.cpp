@@ -25,11 +25,11 @@ int main(int argc, char* argv[]) {
 		return 0;
 	}
 
-	if (_access(argv[1], 0) != 0) {
+	inFileName = argv[1];
+	if (ifstream(inFileName).good() == 0) {
 		cout << "input file is not existing" << endl;
 		return 0;
 	} else {
-		inFileName = argv[1];
 		if (inFileName.find(".txt") != inFileName.length() - 4) {
 			cout << "input file is not .txt" << endl;
 			return 0;

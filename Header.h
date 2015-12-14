@@ -9,7 +9,6 @@
 #include <string>
 #include <list>
 #include <map>
-#include "io.h"
 
 #define LEAF 20
 #define NODE 10
