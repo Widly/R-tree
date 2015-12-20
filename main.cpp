@@ -191,11 +191,11 @@ int main(int argc, char* argv[]) {
 		}
 
 		if (operation == "min") {
+			bufNode = myRtree.FindExtremumByArea(MIN);
 			if (bufNode == NULL) {
 				outFile << "no min, R-tree is empty" << endl << endl;
 				continue;
 			}
-			bufNode = myRtree.FindExtremumByArea(MIN);
 			outFile << "min:" << " x1=" << bufNode->covering.x1
 				<< " x2=" << bufNode->covering.x2
 				<< " y1=" << bufNode->covering.y1
