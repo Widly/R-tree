@@ -26,7 +26,7 @@ int main(int argc, char* argv[]) {
 	}
 
 	inFileName = argv[1];
-	if (ifstream(inFileName).good() == 0) {
+	if (ifstream(inFileName.c_str()).good() == 0) {
 		cout << "input file is not existing" << endl;
 		return 0;
 	} else {
@@ -45,9 +45,9 @@ int main(int argc, char* argv[]) {
 		}
 	}
 
-	ifstream inputFile(inFileName); // входной поток
+	ifstream inputFile(inFileName.c_str()); // входной поток
 	ofstream outFile; // выходной поток
-	outFile.open(outFileName);
+	outFile.open(outFileName.c_str());
 	
 	// читаем посторочно
 	while (!inputFile.eof()) {

@@ -6,9 +6,11 @@
 #include <iostream>
 #include <fstream>
 #include <stddef.h>
+#include <cstring>
 #include <string>
 #include <list>
 #include <map>
+#include <iterator>
 
 #define LEAF 20
 #define NODE 10

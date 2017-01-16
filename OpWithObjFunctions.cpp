@@ -117,6 +117,7 @@ Node* OperationsWithObjects::ChooseNodeWithMinMBR(Node* curNode, Node* newNode) 
 }
 
 bool OperationsWithObjects::IsIntersect(MBR mbr1, MBR mbr2) {
+
 	if (Area(mbr2) < Area(mbr1))
 		swap(mbr1, mbr2);
 
